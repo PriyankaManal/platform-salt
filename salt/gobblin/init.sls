@@ -85,6 +85,13 @@ gobblin-create_gobblin_logs_directory:
     - name: /var/log/pnda/gobblin
     - makedirs: True
 
+gobblin-create_gobblin_logs_file:
+  file.managed:
+    - name: /var/log/pnda/gobblin/gobblin-current.log
+    - user: pnda
+    - group: pnda
+    - mode: 0644
+
 gobblin-install_gobblin_service_script:
   file.managed:
 {% if grains['os'] == 'Ubuntu' %}
