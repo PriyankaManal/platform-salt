@@ -13,7 +13,7 @@ job.description=Pulls data from all kafka topics to HDFS
 mr.job.max.mappers={{ max_mappers }}
 
 # ==== Kafka Source ====
-source.class=gobblin.source.extractor.extract.kafka.KafkaSimpleSource
+source.class=org.apache.gobblin.source.extractor.extract.kafka.KafkaSimpleSource
 source.timezone=UTC
 source.schema={"namespace": "pnda.entity",                 \
                "type": "record",                            \
