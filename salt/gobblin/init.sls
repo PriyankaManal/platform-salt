@@ -61,6 +61,14 @@ gobblin-update_gobblin_reference_configuration_file:
     - require:
       - archive: gobblin-dl-and-extract
 
+gobblin-update_gobblin_mapreduce_sh_file:
+  file.replace:
+    - name: {{ gobblin_real_dir }}/gobblin-dist/bin/gobblin-mapreduce.sh
+    - pattern: 'data-2.6.0.jar'
+    - repl: 'data-11.0.0.jar'
+    - require:
+      - archive: gobblin-dl-and-extract
+
 gobblin-create_gobblin_jobs_directory:
   file.directory:
     - name: {{ gobblin_link_dir }}/configs
